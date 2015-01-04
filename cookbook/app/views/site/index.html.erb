@@ -1,0 +1,16 @@
+<h2>Latest Recipes</h2>
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= link_to recipe.name, recipe.category %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
