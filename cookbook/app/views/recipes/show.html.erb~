@@ -6,12 +6,6 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @recipe.content %>
-</p>
-
-
-<p>
   <strong>Category:</strong>
   <%= @recipe.category %>
 </p>

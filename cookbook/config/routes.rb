@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  resources :categories
+
+  resources :ingredients_in_recipes
+
+  resources :ingredients
+
   get 'site/index'
 
   devise_for :users

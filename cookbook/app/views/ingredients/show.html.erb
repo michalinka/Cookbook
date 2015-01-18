@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ingredient.name %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @ingredient.calories %>
+</p>
+
+<p>
+  <strong>Protein:</strong>
+  <%= @ingredient.protein %>
+</p>
+
+<p>
+  <strong>Carbohydrates:</strong>
+  <%= @ingredient.carbohydrates %>
+</p>
+
+<p>
+  <strong>Fat:</strong>
+  <%= @ingredient.fat %>
+</p>
+
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>

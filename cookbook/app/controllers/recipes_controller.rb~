@@ -69,15 +69,16 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :category, :preparing_time, :difficulty)
+      params.require(:recipe).permit(:name, :content, :category, :preparing_time, :difficulty)
     end
     
     private
     # Use callbacks to share common setup or constraints between actions.
-    def set_bookmark
-      unless @bookmark = current_user.bookmarks.where(id: params[:id]).first
-        flash[:alert] = 'Bookmark not found.'
+    def set_recipe
+      unless @recipe = current_user.recipes.where(id: params[:id]).first
+        flash[:alert] = 'Recipe not found.'
         redirect_to root_url
       end
     end
 end
+# http://wkuchennymoknie.blox.pl/2010/05/PIZZA-CHLOPSKA.html
