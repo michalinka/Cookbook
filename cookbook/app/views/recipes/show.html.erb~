@@ -6,8 +6,13 @@
 </p>
 
 <p>
+  <strong>Content:</strong>
+  <%= @recipe.content %>
+</p>
+
+<p>
   <strong>Category:</strong>
-  <%= @recipe.category %>
+  <%= Category.find_by_id(@recipe.category_id).name%>
 </p>
 
 <p>
@@ -19,6 +24,16 @@
   <strong>Difficulty:</strong>
   <%= @recipe.difficulty %>
 </p>
+
+
+<h2>Ingredients</h2>
+<tbody>
+  <% Ingredients_in_recipe.select {|x| x.recipe_id == @recipe.id}.each do |x| %>
+    <tr>
+      <td><%= link_to x.recipe_id, controller: "ingredients", action: "show", id: x.recipe_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

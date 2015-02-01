@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-  <% Recipe.select {|recipe| recipe.category_id == @category.id}.each do |recipe| %>
+  <% (Recipe.find_all_by category_id: @category.id).each do |recipe| %>
     <tr>
       <td><%= link_to recipe.name, controller: "recipes", action: "show", id: recipe.id %></td>
     </tr>

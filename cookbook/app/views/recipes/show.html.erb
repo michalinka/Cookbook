@@ -10,10 +10,9 @@
   <%= @recipe.content %>
 </p>
 
-
 <p>
   <strong>Category:</strong>
-  <%= @recipe.category %>
+  <%= Category.find_by_id(@recipe.category_id).name%>
 </p>
 
 <p>

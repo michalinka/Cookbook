@@ -1,16 +1,47 @@
-<h2>Latest Recipes</h2>
+<h2>My recipes</h2>
 <table style="width: 100%">
   <thead>
     <tr>
-      <th>Url</th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
-  <% @recipes.each do |recipe| %>
+  <% current_user.recipes.each do |recipe| %>
     <tr>
-      <td><%= link_to recipe.name, recipe.category %></td>
+      <td><%= link_to recipe.name, controller: "recipes", action: "show", id: recipe.id %></td>
     </tr>
   <% end %>
   </tbody>
+  
+  
+<table style="width: 100%">
+<h2>Categories</h2>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% Category.all.each do |category| %>
+    <tr>
+      <td><%= link_to category.name, controller: "categories", action: "show", id: category.id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+ 
 </table>
+
+<table style="width: 100%">
+<thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+</table>
+
+<th>
+  <%= link_to 'Add category', new_category_path %>
+  </th> <th>
+  <%= link_to 'Add recipe', new_recipe_path %></th>

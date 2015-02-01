@@ -16,9 +16,13 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
   </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div> 
   <div class="field">
     <%= f.label :preparing_time %><br>
     <%= f.number_field :preparing_time %>
@@ -30,4 +34,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <%= link_to 'Add ingredients', new_ingredients_in_recipes_path %>
 <% end %>

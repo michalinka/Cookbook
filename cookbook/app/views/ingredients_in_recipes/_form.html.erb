@@ -13,12 +13,10 @@
 
   <div class="field">
     <%= f.label :recipe_id %><br>
- <!--   <%= f.number_field :recipe_id %> -->
     <%= f.collection_select :recipe_id, Recipe.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :ingredient_id %><br> 
-<!--    <%= f.number_field :ingredient_id %> -->
     <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
   </div>
   <div class="field">
@@ -28,4 +26,6 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+  <%= link_to 'New ingredient', new_ingredient_path %>
 <% end %>

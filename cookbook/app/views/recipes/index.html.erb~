@@ -15,11 +15,11 @@
   </thead>
 
   <tbody>
-    <% @recipes.each do |recipe| %>
+    <% current_user.recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.name %></td>
         <td><%= recipe.content %></td>
-        <td><%= recipe.category %></td>
+        <td><%= recipe.category_id %></td>
         <td><%= recipe.preparing_time %></td>
         <td><%= recipe.difficulty %></td>
         <td><%= link_to 'Show', recipe %></td>

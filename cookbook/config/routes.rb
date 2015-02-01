@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :categories
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
   resources :ingredients_in_recipes
 
   resources :ingredients
+  
+# <%= link_to "logout", :controller=> "sessions", :action=> "destroy" %>
 
   get 'site/index'
 

@@ -81,4 +81,3 @@ class RecipesController < ApplicationController
       end
     end
 end
-# http://wkuchennymoknie.blox.pl/2010/05/PIZZA-CHLOPSKA.html
