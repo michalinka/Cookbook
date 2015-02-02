@@ -6,21 +6,33 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!DOCTYPE html>
-
-<body>
-  <ul class="hmenu">
-    <%= render 'devise/menu/registration_items' %>
+<style type="text/css"><!--
+body { background-color: #99ccff; }
+table { background-color: #ffff99; }
+p { background-color: #eeeeee; }
+--></style>
+  <body>
+    <div id="main-container" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-2">
+          <%= render 'devise/menu/registration_items' %>
     <%= render 'devise/menu/login_items' %>
-        <td><%= link_to "Main", site_index_path %></td>
+    <%= link_to "Main", site_index_path, class: 'btn btn-primary btn-xs' %>
+        </div>
+        <div class="col-xs-9">
+         <ul class="hmenu">
+    
   </ul>
   <p style="color: green"><%= notice %></p>
   <p style="color: red"><%= alert %></p>
   <%= yield %>
-</body>
+        </div>
+      </div>
+    </div>
+  </body>
+
 </head>
 <body>
-<!--
-<%= yield %>
--->
+
 </body>
 </html>

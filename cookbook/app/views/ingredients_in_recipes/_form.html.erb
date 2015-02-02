@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :recipe_id %><br>
-    <%= f.collection_select :recipe_id, Recipe.all, :id, :name %>
+    <%= f.collection_select :recipe_id, Recipe.all, :id, :name, {}, {:class=>'input', :name=>'normalSelect', :id=>'normalSelect', :style=>'width:75%', :style=>'background-color:#9999ff', :onchange=>"$('#accordion').accordion('activate',2);$('#blind').show('blind', 500)"} %>
   </div>
   <div class="field">
     <%= f.label :ingredient_id %><br> 
-    <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+    <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name, {}, {:class=>'input', :name=>'normalSelect', :id=>'normalSelect', :style=>'width:75%', :style=>'background-color:#9999ff', :onchange=>"$('#accordion').accordion('activate',2);$('#blind').show('blind', 500)"}%>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
@@ -27,5 +27,5 @@
     <%= f.submit %>
   </div>
   
-  <%= link_to 'New ingredient', new_ingredient_path %>
+  <%= link_to 'New ingredient', new_ingredient_path, class: 'btn btn-info btn-xs' %>
 <% end %>

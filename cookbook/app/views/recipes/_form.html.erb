@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.collection_select :category_id, Category.all, :id, :name %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {}, {:class=>'input', :name=>'normalSelect', :id=>'normalSelect', :style=>'width:75%', :style=>'background-color:#9999ff', :onchange=>"$('#accordion').accordion('activate',2);$('#blind').show('blind', 500)"} %>
   </div> 
   <div class="field">
     <%= f.label :preparing_time %><br>
@@ -34,5 +34,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-  <%= link_to 'Add ingredients', new_ingredients_in_recipe_path %>
+  <%= link_to 'Add ingredients', new_ingredients_in_recipe_path,class: 'btn btn-info btn-xs' %>
 <% end %>

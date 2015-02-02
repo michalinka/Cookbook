@@ -42,4 +42,7 @@ gem 'activeadmin',         github: 'gregbell/active_admin'
 #gem 'rails', git: 'https://github.com/rails/rails.git', branch: '4-0-stable'
 gem 'ransack'
 #gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 end
